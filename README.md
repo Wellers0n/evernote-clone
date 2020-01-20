@@ -2,10 +2,7 @@
     <img src="./public/logo192.png" height="130"/>
 </p>
 <p align="center">
-    <video width="320" height="240" controls>
-  <source src="./plublic/facescreen.webm" type="video/mp4">
-  
-</video>
+  <img src="./plublic/facescreen.gif" alt="presentation">
 </p>
 
 <p>
