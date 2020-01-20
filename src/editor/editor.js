@@ -20,15 +20,25 @@ const EditorComponent = props => {
     setTitle(selectedNote.title);
     setText(selectedNote.body);
     setId(selectedNote.id);
-  }, []);
+  }, [selectedNoteIndex]);
 
   const update = debouce(() => {
     props.noteUpdate(id, { title: title, body: text });
   }, 1500);
 
+  const updateTitle = async txt => {
+    await setTitle(txt);
+  };
+
   return (
     <div className={classes.editorContainer}>
       <borderColorIcon className={classes.editIcon} />
+      <input
+        className={classes.titleInput}
+        placeholder="Note title..."
+        value={title ? title : ""}
+        onChange={e => updateTitle(e.target.value)}
+      />
       <ReactQuill value={text} onChange={_onChange}></ReactQuill>
     </div>
   );
