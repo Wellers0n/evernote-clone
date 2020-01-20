@@ -20,7 +20,7 @@ const EditorComponent = props => {
     setTitle(selectedNote.title);
     setText(selectedNote.body);
     setId(selectedNote.id);
-  }, [selectedNoteIndex]);
+  }, []);
 
   const update = debouce(() => {
     props.noteUpdate(id, { title: title, body: text });
