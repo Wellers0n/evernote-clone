@@ -16,7 +16,7 @@
 
 ## Simples evernote-clone  
   
-  Evernote-clone is simples application with real time database
+Evernote-clone is a simple application with real time database
 
 ## Stack used
 
