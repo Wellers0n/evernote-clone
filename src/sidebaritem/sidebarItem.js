@@ -7,7 +7,7 @@ import styles from "./styles";
 
 const SidebarItemComponent = props => {
 
-  const { _note, _index, selectedNoteIndex, selectedNote, classes, DeleteNote } = props;
+  const { _note, _index, selectedNoteIndex, selectNote, classes, DeleteNote } = props;
 
   const DeleteItem = (note) => {
       if(window.confirm(`Are you sure you want to delete: ${note.title}`)){
@@ -17,7 +17,7 @@ const SidebarItemComponent = props => {
   return (
     <div key={_index}>
       <ListItem className={classes.listItem} selected={selectedNoteIndex === _index} alignItems="flex-start">
-        <div className={classes.textSection} onClick={() => selectedNote(_note, _index)}>
+        <div className={classes.textSection} onClick={() => selectNote(_note, _index)}>
           <ListItemText
             primary={_note.title}
             secondary={removeHTMLTags(_note.body.substring(0, 30)) + "..."}
