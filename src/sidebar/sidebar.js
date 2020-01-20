@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import debouce from "../helpers";
 import borderColorIcon from "@material-ui/icons";
-import { withStyles, Button } from "@material-ui/core";
+import SidebarItemComponent from "./../sidebaritem/sidebarItem";
+import { withStyles, Button, List, Divider } from "@material-ui/core";
 import styles from "./styles";
 
 const SidebarComponent = props => {
-  const { classes } = props;
+  const { classes, notes, selectedNoteIndex } = props;
   const [addingNote, setAddingNotes] = useState(false);
   const [title, setTitle] = useState(null);
 
@@ -16,11 +17,15 @@ const SidebarComponent = props => {
   };
 
   const updateTitle = txt => {
-    setTitle(txt)
+    setTitle(txt);
   };
 
   const newNote = () => {
     console.log(title);
+  };
+
+  const selectedNote = () => {
+    console.log("selected note");
   };
 
   return (
@@ -41,6 +46,21 @@ const SidebarComponent = props => {
           </Button>
         </div>
       )}
+      <List>
+        {notes.map((_note, _index) => {
+          return (
+            <div key={_index}>
+              <SidebarItemComponent
+                _note={_note}
+                _index={_index}
+                selectedNoteIndex={selectedNoteIndex}
+                selectedNote={selectedNote}
+              ></SidebarItemComponent>
+              <Divider></Divider>
+            </div>
+          );
+        })}
+      </List>
     </div>
   );
 };

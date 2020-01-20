@@ -27,8 +27,8 @@ function App() {
 
   return (
     <div>
-      <SidebarComponent />
-      <EditorComponent/>
+      <SidebarComponent notes={notes || []} selectedNoteIndex={selectedNoteIndex} selectedNote={selectedNote} />
+      <EditorComponent />
     </div>
   );
 }
