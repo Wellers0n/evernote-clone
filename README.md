@@ -2,7 +2,7 @@
     <img src="./public/logo192.png" height="130"/>
 </p>
 <p align="center">
-  <img src="./public/facescreen.gif" height="620" alt="presentation">
+  <img src="./public/facescreen.gif" alt="presentation">
 </p>
 
 <p>
