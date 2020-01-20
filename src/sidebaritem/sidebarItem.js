@@ -11,7 +11,7 @@ const SidebarItemComponent = props => {
     <div key={_index}>
       <ListItem className={classes.listItem} selected={selectedNoteIndex === _index} alignItems="flex-start">
         <div className={classes.textSection} onCLick={() => selectedNote(_note, _index)}>
-            <ListItemText primary={_note.title} secondary={_note.body.substring(0, 30) + '...'}></ListItemText>
+            <ListItemText primary={_note.title} secondary={removeHTMLTags(_note.body.substring(0, 30)) + '...'}></ListItemText>
         </div>
       </ListItem>
     </div>
