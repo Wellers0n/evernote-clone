@@ -22,3 +22,4 @@ Evernote-clone is a simple application with real time database
 [Firebase](https://console.firebase.google.com/)<br/>
 [Yarn](https://yarnpkg.com/en/)<br/>
 [Material-UI](https://material-ui.com/)<br/>
+[React-Quill](https://github.com/zenoamaro/react-quill)<br/>
