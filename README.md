@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./4fun.png" height="130"/>
+    <img src="./public/logo192.png" height="130"/>
 </p>
 <p align="center">
     <video width="320" height="240" controls>
