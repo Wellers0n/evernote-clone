@@ -1,13 +1,14 @@
 <p align="center">
     <img src="./public/logo192.png" height="130"/>
 </p>
-<p align="center">
-  <img src="./public/facescreen.gif" alt="presentation">
-</p>
 
 <p>
    <h1 align="center">Evernote-clone</h1>
 <p/>
+
+<p align="center">
+  <img src="./public/facescreen.gif" alt="presentation">
+</p>
     
 <br/>
 
