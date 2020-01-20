@@ -28,6 +28,10 @@ const SidebarComponent = props => {
     console.log("selected note");
   };
 
+  const DeleteNote = () => {
+    console.log("delete note");
+  };
+
   return (
     <div className={classes.sidebarContainer}>
       <Button onClick={newNoteBtnClick} className={classes.newNoteBtn}>
@@ -55,6 +59,7 @@ const SidebarComponent = props => {
                 _index={_index}
                 selectedNoteIndex={selectedNoteIndex}
                 selectedNote={selectedNote}
+                DeleteNote={DeleteNote}
               ></SidebarItemComponent>
               <Divider></Divider>
             </div>

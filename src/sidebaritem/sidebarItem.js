@@ -6,7 +6,14 @@ import { withStyles, ListItem, ListItemText } from "@material-ui/core";
 import styles from "./styles";
 
 const SidebarItemComponent = props => {
-  const { _note, _index, selectedNoteIndex, selectedNote, classes } = props;
+
+  const { _note, _index, selectedNoteIndex, selectedNote, classes, DeleteNote } = props;
+
+  const DeleteItem = (note) => {
+      if(window.confirm(`Are you sure you want to delete: ${note.title}`)){
+        return DeleteNote(note)
+      }
+  }
   return (
     <div key={_index}>
       <ListItem className={classes.listItem} selected={selectedNoteIndex === _index} alignItems="flex-start">
@@ -16,7 +23,7 @@ const SidebarItemComponent = props => {
             secondary={removeHTMLTags(_note.body.substring(0, 30)) + "..."}
           ></ListItemText>
         </div>
-        <DeleteIcon onClick={() => console.log("Deleted: " + _note.id)} className={classes.deleteIcon}></DeleteIcon>
+        <DeleteIcon onClick={() => DeleteItem(_note)} className={classes.deleteIcon}></DeleteIcon>
       </ListItem>
     </div>
   );
