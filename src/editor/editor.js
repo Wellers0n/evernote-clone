@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 import debouce from "../helpers";
 import borderColorIcon from "@material-ui/icons";
@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const EditorComponent = props => {
-  const { classes } = props;
+  const { classes, selectedNote, selectedNoteIndex, notes } = props;
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [id, setId] = useState("");
@@ -15,11 +15,20 @@ const EditorComponent = props => {
     await setText(value);
     update();
   };
+
+  useEffect(() => {
+    setTitle(selectedNote.title);
+    setText(selectedNote.body);
+    setId(selectedNote.id);
+  }, []);
+
   const update = debouce(() => {
-    console.log("UPDATE");
+    props.noteUpdate(id, { title: title, body: text });
   }, 1500);
+
   return (
     <div className={classes.editorContainer}>
+      <borderColorIcon className={classes.editIcon} />
       <ReactQuill value={text} onChange={_onChange}></ReactQuill>
     </div>
   );
