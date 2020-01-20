@@ -11,12 +11,16 @@ const SidebarComponent = props => {
   const [title, setTitle] = useState(null);
 
   const newNoteBtnClick = () => {
-    setAddingNotes(!addingNote)
-    setTitle(null)
+    setAddingNotes(!addingNote);
+    setTitle(null);
   };
 
   const updateTitle = txt => {
-    console.log("here it is");
+    setTitle(txt)
+  };
+
+  const newNote = () => {
+    console.log(title);
   };
 
   return (
@@ -32,6 +36,9 @@ const SidebarComponent = props => {
             type="text"
             onKeyUp={e => updateTitle(e.target.value)}
           />
+          <Button onClick={newNote} className={classes.newNoteSubmitBtn}>
+            Submit note
+          </Button>
         </div>
       )}
     </div>
